@@ -1,1 +1,8 @@
-
+Flask
+Flask-SQLAlchemy
+Flask-WTF
+Jinja2
+SQLAlchemy==0.9.8
+WTForms==2.0.1
+Werkzeug==0.9.6
+argparse==1.2.1
