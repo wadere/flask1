@@ -3,6 +3,14 @@
     <title>HEADLINES</title>
   </head>
   <body>
+      <h1>Current Weather</h1>
+      <form>
+          <input type ="text" name="city" placeholder="weather search">
+          <input type="submit" value="Submit">
+      </form>
+      <p>City:  <b>{{weather.city}}, {{weather.country}} </b></p>
+      <p>It is currently: {{weather.temparature}} C</b></p>
+
       <h1>{{source}} Headlines</h1>
         <form>
             <input type="text" name="publication" placeholder="search"/>
