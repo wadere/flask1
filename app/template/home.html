@@ -9,8 +9,25 @@
           <input type="submit" value="Submit">
       </form>
       <p>City:  <b>{{weather.city}}, {{weather.country}} </b></p>
-      <p>It is currently: {{weather.temparature}} C</b></p>
+      <p>Current Condition: {{weather.description}} and {{weather.temparature}} C</b></p>
 
+      <h1>Currency</h1>
+      <form>
+          from:<select name="currency_from">
+                    <option value ="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                    <option value ="EUR">EUR</option><option value="ZAR"> ZAR </option >
+                </select>
+            to: <select name =" currency_to" >
+                    <option value =" USD"> USD</option>
+                    <option value =" GBP" > GBP</option>
+                    <option value ="EUR">EUR</option>
+                    <option value ="ZAR">ZAR</option>
+                </select>
+                <input type =" Button" value =" Submit">
+      </form >
+
+       1 {{ currency_from}} = {{rate}} {{currency_to}}
       <h1>{{source}} Headlines</h1>
         <form>
             <input type="text" name="publication" placeholder="search"/>
