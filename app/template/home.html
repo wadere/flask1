@@ -1,38 +1,81 @@
 <html>
   <head>
     <title>HEADLINES</title>
+      <style>
+          html {
+              font-family:"Helvetica";
+              background: white;  }
+          body { background: white;
+              padding-left:10;
+              max-width:1100px;
+              margin:0 auto;}
+          #header {background: lightsteelblue;
+              padding-top:5;
+              padding-left:10;}
+          #inner-header {
+              padding-left:10;
+          }
+          #main{
+              background: lightgray;
+              padding-left:10;
+          }
+          input[type ="text"], select {
+              color: grey;
+              border: 1px solid lightsteelblue;
+              height: 30px;
+              line-height: 15px;
+              margin: 2px 6px 16px 0px;
+          }
+          input[type ="submit"] {
+              padding: 5px 10px 5px 10px;
+              color: black;
+              background: lightsteelblue;
+              border: none;
+              box-shadow: 1px 1px 1px #4C6E91;
+          }
+          input[type ="submit"]:hover{
+              background: steelblue;
+          }
+
+      </style>
   </head>
   <body>
-      <h1>Current Weather</h1>
-      <form>
-          <input type ="text" name="city" placeholder="weather search">
-          <input type="submit" value="Submit">
-      </form>
-      <p>City:  <b>{{weather.city}}, {{weather.country}} </b></p>
-      <p>Current Condition: {{weather.description}} and {{weather.temparature}} C</b></p>
+      <div id ="header">
+          <h1> Headlines </h1>
+          <p> Recent News and Weather </p> <hr/>
+            <h2> Weather Conditions </h2>
+              <form>
+                  <input type ="text" name="city" placeholder="weather search">
+                  <input type="submit" value="Submit">
+              </form>
+            <p>City:  <b>{{weather.city}}, {{weather.country}} </b></p>
+            <p>Currently: {{weather.description}} and {{weather.temparature}} C</b></p><hr/>
+      </div>
 
-      <h1>Currency</h1>
-      <form>
-          from:<select name="currency_from">
-                    <option value ="USD">USD</option>
-                    <option value="GBP">GBP</option>
-                    <option value ="EUR">EUR</option><option value="ZAR"> ZAR </option >
-                </select>
-            to: <select name =" currency_to" >
-                    <option value =" USD"> USD</option>
-                    <option value =" GBP" > GBP</option>
-                    <option value ="EUR">EUR</option>
-                    <option value ="ZAR">ZAR</option>
-                </select>
-                <input type =" Button" value =" Submit">
-      </form >
+      <div id="main">
+          <h1>Currency</h1>
+          <form>
+              from:<select name="currency_from">
+                        <option value ="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                        <option value ="EUR">EUR</option><option value="ZAR"> ZAR </option >
+                    </select>
+                to: <select name =" currency_to" >
+                        <option value =" USD"> USD</option>
+                        <option value =" GBP" > GBP</option>
+                        <option value ="EUR">EUR</option>
+                        <option value ="ZAR">ZAR</option>
+                    </select>
+                    <input type =" Button" value =" Submit">
+          </form >
+           1 {{ currency_from}} = {{rate}} {{currency_to}}
+      </div>
 
-       1 {{ currency_from}} = {{rate}} {{currency_to}}
       <h1>{{source}} Headlines</h1>
-        <form>
+      <form>
             <input type="text" name="publication" placeholder="search"/>
             <input type="submit" value="Submit"/>
-        </form>
+      </form>
       {% for article in articles %}
           <b><a href ="{{article.link}}">{{article.title}}</a></b><br/>
           <i>{{article.published}}</i><br/>
